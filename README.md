@@ -4,7 +4,15 @@ To overcome these challenges, we propose a novel pupil-driven differential phase
 
 [[Codes]](https://github.com/zhoujinhua2015/Pupil-Driven-Differential-Phase-Contrast)
 
+<div align="center">
+
 ## PD-qDPC / PD-DPC (MATLAB)
+
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2016b%2B-blue)](https://www.mathworks.com/products/matlab.html)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)](#)
+[![License](https://img.shields.io/badge/license-TBD-orange)](#license)
+
+</div>
 
 MATLAB reference implementation for **quantitative Differential Phase Contrast (qDPC)** reconstruction, including a **Pupil-Driven DPC (PD-DPC / PD-qDPC)** solver and several common baselines.
 
@@ -15,7 +23,23 @@ This repository contains:
 
 ---
 
-### What it does
+### 📌 Contents
+
+- [🧭 What it does](#what-it-does)
+- [🛠️ Quick start](#quick-start)
+- [📥 Input format](#input-format)
+- [⚙️ Key parameters](#key-parameters)
+- [📦 Outputs](#outputs)
+- [🖼️ Example results](#example-results)
+- [🧱 Project structure](#project-structure)
+- [📚 Reference](#reference)
+- [✍️ Citation](#citation)
+- [🧾 License](#license)
+
+---
+
+<a id="what-it-does"></a>
+### 🧭 What it does
 
 Given **four raw DPC intensity images** captured under different asymmetric illuminations (named `r1`–`r4`), the pipeline:
 1. Builds two-axis DPC measurements
@@ -32,13 +56,14 @@ Reconstruction methods included:
 
 ---
 
-### Quick start
+<a id="quick-start"></a>
+### 🛠️ Quick start
 
-#### Requirements
+#### ✅ Requirements
 - MATLAB (R2016b or newer recommended)
 - **Image Processing Toolbox** (used by functions such as `psf2otf`, `fspecial`, `imfilter`, `imfill`, `strel`)
 
-#### Run the demo
+#### ▶️ Run the demo
 1. Put your data in `rawdata/` (or use the included example data):
    - `rawdata/r1.BMP`
    - `rawdata/r2.BMP`
@@ -51,7 +76,8 @@ Reconstruction methods included:
 
 ---
 
-### Input format (important)
+<a id="input-format"></a>
+### 📥 Input format (important)
 
 The script forms two DPC channels as:
 - `$I_{dpc,1} \leftarrow (r1 - r2) / ( (r1+r2+r3+r4)/2 + \varepsilon)$`
@@ -61,7 +87,8 @@ So **`r1`/`r2` must be a paired illumination (opposites)** for one axis, and **`
 
 ---
 
-### Key parameters
+<a id="key-parameters"></a>
+### ⚙️ Key parameters
 
 Microscope/system parameters live in:
 - `func/init_environment.m` (e.g., wavelength `lambda`, objective NA `na_obj`, illumination NA `na_illum`, magnification `mag`, pixel size `unit`)
@@ -72,7 +99,8 @@ The main demo script (`PD_DPC.m`) controls:
 
 ---
 
-### Outputs
+<a id="outputs"></a>
+### 📦 Outputs
 
 The demo saves (in `examples/rawdata_output/`):
 - `I_dpc_1.png`, `I_dpc_2.png`: computed DPC channels
@@ -88,7 +116,8 @@ The demo saves (in `examples/rawdata_output/`):
 
 ---
 
-### Example results (included)
+<a id="example-results"></a>
+### 🖼️ Example results (included)
 
 Inputs (r1–r4):
 
@@ -113,7 +142,8 @@ DPC channels and reconstructions:
 
 ---
 
-### Project structure
+<a id="project-structure"></a>
+### 🧱 Project structure
 
 - `PD_DPC.m`: main demo / entry script
 - `func/`
@@ -127,13 +157,15 @@ DPC channels and reconstructions:
 
 ---
 
-### Reference
+<a id="reference"></a>
+### 📚 Reference
 
 - Hsi-Hsun Chen, Yu-Zi Lin, Yuan Luo, “Isotropic differential phase contrast microscopy for quantitative phase bio-imaging,” *J. Biophotonics*, 2018. (See comment in `func/solver/solver_GradGauss_DPC.m`.)
-
+- S. Zhang, T. Peng, Z. Ke, H. Yang, T. T. J. M. Berendschot, J. Zhou, “Retinex-qDPC: Automatic background-rectified quantitative differential phase contrast imaging,” *Computer Methods and Programs in Biomedicine*, 2023, 230, 107327. https://doi.org/10.1016/j.cmpb.2022.107327
 ---
 
-### Citation
+<a id="citation"></a>
+### ✍️ Citation
 
 If you use this code in academic work, please cite the repository and the relevant paper/thesis.
 
@@ -147,10 +179,3 @@ You can start with a software citation like:
   url    = {https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME}
 }
 ```
-
----
-
-### License
-
-No license is specified yet. **Before making the repository public**, please add a `LICENSE` file (e.g., MIT/Apache-2.0/GPL) consistent with how you want others to use and redistribute the code.
-
