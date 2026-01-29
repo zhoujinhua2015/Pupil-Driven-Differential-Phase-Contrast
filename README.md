@@ -171,11 +171,15 @@ If you use this code in academic work, please cite the repository and the releva
 
 You can start with a software citation like:
 
-```bibtex
-@software{pd_qdpc_pd_dpc,
-  title  = {PD-qDPC / PD-DPC (MATLAB)},
-  author = {YOUR_NAME},
-  year   = {2026},
-  url    = {https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME}
+```
+@misc{zhang2023pupil_driven_qdpc,
+  title         = {Pupil-driven quantitative differential phase contrast imaging},
+  author        = {Zhang, Shuhe and Wu, Hao and Peng, Tao and Ke, Zeyu and Shao, Meng and Berendschot, Tos T. J. M. and Zhou, Jinhua},
+  year          = {2023},
+  eprint        = {2306.17088},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.OC},
+  doi           = {10.48550/arXiv.2306.17088},
+  url           = {https://doi.org/10.48550/arXiv.2306.17088}
 }
 ```
