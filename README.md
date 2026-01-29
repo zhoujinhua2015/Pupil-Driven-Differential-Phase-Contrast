@@ -76,15 +76,6 @@ Reconstruction methods included:
 
 ---
 
-<a id="input-format"></a>
-### 📥 Input format (important)
-
-The script forms two DPC channels as:
-- `$I_{dpc,1} \leftarrow (r1 - r2) / ( (r1+r2+r3+r4)/2 + \varepsilon)$`
-- `$I_{dpc,2} \leftarrow (r3 - r4) / ( (r1+r2+r3+r4)/2 + \varepsilon)$`
-
-So **`r1`/`r2` must be a paired illumination (opposites)** for one axis, and **`r3`/`r4` for the orthogonal axis**.
-
 ---
 
 <a id="key-parameters"></a>
